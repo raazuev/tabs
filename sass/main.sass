@@ -1,0 +1,229 @@
+@import _mixin
+@import _variables
+@import _fonts
+*
+    font-family: Onest-Regular
+    box-sizing: border-box
+    margin: 0
+html
+    background-color: $background
+    scroll-behavior: smooth
+    overflow-x: hidden
+img
+    width: 100%
+.container
+    max-width: 1480px
+    width: 100%
+    margin: 0 auto
+    @media (max-width: 991px)
+        overflow-x: hidden
+    @media (max-width: 376px)
+        overflow-x: hidden
+.header
+    margin-top: 50px
+    min-height: 140px
+    @media (max-width: 991px)
+        margin: 20px
+    &__content
+        display: grid
+        grid-template-columns: repeat(2, 50%)
+        grid-template-rows: 130px 1fr
+        gap: 5px
+        @media (max-width: 376px)
+            display: flex
+            flex-direction: column
+            gap: 30px
+        .header__title
+            grid-column: 2 span
+            grid-row: 1
+            display: flex
+            flex-direction: column
+            gap: 20px
+            h1
+                @include header_title-h1
+                @media (max-width: 991px)
+                    font-size: 32px
+                @media (max-width: 376px)
+                    font-size: 22px
+                    padding-left: 20px
+                span
+                    @include header_title-h1-span
+                    @media (max-width: 991px)
+                        font-size: 32px
+                    @media (max-width: 376px)
+                        font-size: 22px
+            p
+                @include header_title-p
+                @media (max-width: 991px)
+                    font-size: 16px
+                @media (max-width: 376px)
+                    font-size: 14px
+                    padding-left: 20px
+        .tabs-left
+            grid-column: 1 / 2
+            grid-row: 2
+            display: flex
+            flex-direction: column
+            gap: 20px
+            max-width: 718px
+            box-shadow: -5px 0px 25px -8px #808080
+            @media (max-width: 376px)
+                display: flex
+                align-items: center
+            &__item 
+                position: relative
+                max-width: 718px
+                height: 140px
+                display: flex
+                flex-direction: column
+                justify-content: space-evenly
+                padding: 20px
+                background-color: $tab_bg
+                transition: transform .5s ease
+                @media (max-width: 376px)
+                    width: 350px
+                &:hover
+                    background-color: $hover
+                    transform: scale(1.01)
+                    border-radius: 20px
+                    .arrow-container 
+                        background-color: white
+                        .arrow 
+                            border-color: transparent transparent transparent blue
+                h2
+                    @include tab_item-title
+                    @media (max-width: 991px)
+                        font-size: 20px
+                    @media (max-width: 376px)
+                        font-size: 16px
+                p
+                    @include tab_item-subtitle
+                    @media (max-width: 991px)
+                        font-size: 14px
+                    @media (max-width: 376px)
+                        font-size: 10px
+                .arrow-container 
+                    position: absolute
+                    top: 25%
+                    right: 20px 
+                    transform: translateY(-50%) 
+                    width: 40px 
+                    height: 40px 
+                    display: flex 
+                    align-items: center 
+                    justify-content: center 
+                    background-color: blue
+                    transition: background-color 0.3s ease 
+                    border-radius: 6px
+                    @media (max-width: 376px)
+                        width: 25px
+                        height: 25px
+                .arrow 
+                    width: 0 
+                    height: 0 
+                    border-style: solid 
+                    border-width: 7px 0 7px 10px 
+                    border-color: transparent transparent transparent white
+                    transition: border-color 0.3s ease
+                    @media (max-width: 376px)
+                        border-width: 5px 0 5px 8px
+        .tabs-right
+            grid-column: 2
+            grid-row: 2
+            display: flex
+            flex-direction: column
+            gap: 20px
+            box-shadow: 5px 0px 25px -8px #808080
+            @media (max-width: 376px)
+                display: flex
+                align-items: center
+            &__content
+                width: 100%
+                height: 460px
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                padding: 20px
+                background-color: $tab_bg
+                position: relative
+                overflow-y: auto
+                @media (max-width: 376px)
+                    width: 350px
+                a
+                    @include btn
+                    position: sticky
+                    bottom: 5px
+                &::-webkit-scrollbar
+                    width: 4px
+                    height: 20px
+                    scrollbar-gutter: stable
+                &::-webkit-scrollbar-thumb
+                    background-color: $btn 
+                    border-radius: 10px
+                    width: 20px
+                    background-clip: padding-box
+                &::-webkit-scrollbar-track
+                    background-color: #ADB6BF66
+                    margin: 40px
+                .tab-content
+                    display: flex
+                    flex-direction: column
+                    gap: 30px
+                    margin-bottom: 5px
+                    h2
+                        @include tab_content-title
+                        padding-top: 30px
+                    p, ul, ol
+                        @include tab_content-descr
+                        li > span
+                            font-weight: 700
+                    .work-slider-container
+                        position: relative
+                        width: 100%
+                        overflow: hidden
+                        .work-slider
+                            display: flex
+                            transition: transform 0.5s ease-in-out
+                            gap: 10px
+                            img
+                                width: 50%
+                                max-width: 300px
+                                cursor: pointer
+                                user-select: none
+                                transition: transform .5s ease
+                                &:hover
+                                    transform: scale(1.04)
+                    .inner_form
+                        display: flex
+                        flex-direction: column
+                        flex-wrap: wrap
+                        align-content: flex-start
+                        gap: 23px
+                        label
+                            @include form_title
+                            padding-top: 30px
+                        input
+                            width: 100%
+                            min-height: 50px
+                            border: none
+                            border-radius: 10px
+                            padding: 20px
+                            outline: 0
+                            @include form_text
+                            &:hover
+                                outline: 2px solid blue
+                            &:focus
+                                outline: 0
+                            &::placeholder
+                                position: absolute
+                                z-index: 2
+                                transition: all .5s ease
+                            &:focus::placeholder
+                                font-size: 11px
+                                transform: translateY(-17px)
+                        .btn_form
+                            .label_btn
+                                width: 100%
+                                height: 40px
+                                @include btn 
+                                border: none
