@@ -17,19 +17,25 @@ img
     margin: 0 auto
     @media (max-width: 991px)
         overflow-x: hidden
-    @media (max-width: 376px)
+    @media (max-width: 435px)
         overflow-x: hidden
 .header
     margin-top: 50px
     min-height: 140px
     @media (max-width: 991px)
+        display: flex
+        flex-direction: column
         margin: 20px
     &__content
         display: grid
         grid-template-columns: repeat(2, 50%)
         grid-template-rows: 130px 1fr
         gap: 5px
-        @media (max-width: 376px)
+        @media (max-width: 991px)
+            display: flex
+            flex-direction: column
+            margin: 20px
+        @media (max-width: 435px)
             display: flex
             flex-direction: column
             gap: 30px
@@ -43,20 +49,20 @@ img
                 @include header_title-h1
                 @media (max-width: 991px)
                     font-size: 32px
-                @media (max-width: 376px)
+                @media (max-width: 435px)
                     font-size: 22px
                     padding-left: 20px
                 span
                     @include header_title-h1-span
                     @media (max-width: 991px)
                         font-size: 32px
-                    @media (max-width: 376px)
+                    @media (max-width: 435px)
                         font-size: 22px
             p
                 @include header_title-p
                 @media (max-width: 991px)
                     font-size: 16px
-                @media (max-width: 376px)
+                @media (max-width: 435px)
                     font-size: 14px
                     padding-left: 20px
         .tabs-left
@@ -67,7 +73,7 @@ img
             gap: 20px
             max-width: 718px
             box-shadow: -5px 0px 25px -8px #808080
-            @media (max-width: 376px)
+            @media (max-width: 435px)
                 display: flex
                 align-items: center
             &__item 
@@ -80,7 +86,7 @@ img
                 padding: 20px
                 background-color: $tab_bg
                 transition: transform .5s ease
-                @media (max-width: 376px)
+                @media (max-width: 435px)
                     width: 350px
                 &:hover
                     background-color: $hover
@@ -94,13 +100,13 @@ img
                     @include tab_item-title
                     @media (max-width: 991px)
                         font-size: 20px
-                    @media (max-width: 376px)
+                    @media (max-width: 435px)
                         font-size: 16px
                 p
                     @include tab_item-subtitle
                     @media (max-width: 991px)
                         font-size: 14px
-                    @media (max-width: 376px)
+                    @media (max-width: 435px)
                         font-size: 10px
                 .arrow-container 
                     position: absolute
@@ -115,7 +121,7 @@ img
                     background-color: blue
                     transition: background-color 0.3s ease 
                     border-radius: 6px
-                    @media (max-width: 376px)
+                    @media (max-width: 435px)
                         width: 25px
                         height: 25px
                 .arrow 
@@ -125,7 +131,7 @@ img
                     border-width: 7px 0 7px 10px 
                     border-color: transparent transparent transparent white
                     transition: border-color 0.3s ease
-                    @media (max-width: 376px)
+                    @media (max-width: 435px)
                         border-width: 5px 0 5px 8px
         .tabs-right
             grid-column: 2
@@ -134,7 +140,7 @@ img
             flex-direction: column
             gap: 20px
             box-shadow: 5px 0px 25px -8px #808080
-            @media (max-width: 376px)
+            @media (max-width: 435px)
                 display: flex
                 align-items: center
             &__content
